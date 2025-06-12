@@ -1,0 +1,119 @@
+.ball-scene-page {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	font-family: Arial, sans-serif;
+	overflow: hidden;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(10px);
+}
+
+.header h1 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.connection-status {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 5px;
+}
+
+.status-indicator {
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.status-indicator.connected {
+	background-color: rgba(76, 175, 80, 0.8);
+}
+
+.status-indicator.disconnected {
+	background-color: rgba(244, 67, 54, 0.8);
+}
+
+.last-update {
+	font-size: 12px;
+	opacity: 0.8;
+}
+
+.instructions {
+	text-align: center;
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.1);
+	margin: 0 20px;
+	border-radius: 10px;
+}
+
+.instructions p {
+	margin: 5px 0;
+}
+
+.warning {
+	color: #ffeb3b !important;
+	font-weight: bold;
+}
+
+.pose-status {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin: 20px;
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+}
+
+.arm-status {
+	padding: 12px 24px;
+	border-radius: 25px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.arm-status.left {
+	background-color: rgba(33, 150, 243, 0.3);
+	color: #64b5f6;
+}
+
+.arm-status.right {
+	background-color: rgba(233, 30, 99, 0.3);
+	color: #f48fb1;
+}
+
+.arm-status.raised {
+	transform: translateY(-3px) scale(1.05);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.arm-status.left.raised {
+	background-color: #2196f3;
+	color: white;
+	border-color: #1976d2;
+}
+
+.arm-status.right.raised {
+	background-color: #e91e63;
+	color: white;
+	border-color: #c2185b;
+}
+
+.scene-container {
+	height: calc(100vh - 200px);
+	margin: 0 20px 20px 20px;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
