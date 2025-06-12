@@ -241,7 +241,6 @@ function App() {
   // Function to open ball scene in multiple tabs with different camera angles
   const openBallScene = () => {
     const cameraAngles = ['front', 'back', 'left', 'right', 'top'];
-    const angleNames = ['Front View', 'Back View', 'Left View', 'Right View', 'Top View'];
 
     cameraAngles.forEach((angle, index) => {
       const ballSceneUrl = `${window.location.origin}/ball-scene.html?angle=${angle}`;
@@ -252,11 +251,11 @@ function App() {
     });
   };
 
-  // Function to open individual camera view
-  const openIndividualView = (angle, viewName) => {
+  // Function to open a single camera view
+  const openSingleView = (angle, viewName) => {
     const ballSceneUrl = `${window.location.origin}/ball-scene.html?angle=${angle}`;
     const windowName = `ballScene_${angle}`;
-    const windowFeatures = 'width=800,height=600,left=100,top=100';
+    const windowFeatures = 'width=800,height=600,left=200,top=100';
     
     window.open(ballSceneUrl, windowName, windowFeatures);
   };
@@ -315,14 +314,39 @@ function App() {
       </div>
 
       {/* Individual Camera View Buttons */}
-      <div className="individual-views">
-        <h3>Open Individual Views:</h3>
-        <div className="view-buttons">
-          <button onClick={() => openIndividualView('front', 'Front View')}>📹 Front</button>
-          <button onClick={() => openIndividualView('back', 'Back View')}>📹 Back</button>
-          <button onClick={() => openIndividualView('left', 'Left View')}>📹 Left</button>
-          <button onClick={() => openIndividualView('right', 'Right View')}>📹 Right</button>
-          <button onClick={() => openIndividualView('top', 'Top View')}>📹 Top</button>
+      <div className="individual-camera-buttons">
+        <h3>Open Individual Camera Views:</h3>
+        <div className="camera-button-grid">
+          <button
+            className="single-camera-button"
+            onClick={() => openSingleView('front', 'Front View')}
+          >
+            📹 Front View
+          </button>
+          <button
+            className="single-camera-button"
+            onClick={() => openSingleView('back', 'Back View')}
+          >
+            📹 Back View
+          </button>
+          <button
+            className="single-camera-button"
+            onClick={() => openSingleView('left', 'Left View')}
+          >
+            📹 Left View
+          </button>
+          <button
+            className="single-camera-button"
+            onClick={() => openSingleView('right', 'Right View')}
+          >
+            📹 Right View
+          </button>
+          <button
+            className="single-camera-button"
+            onClick={() => openSingleView('top', 'Top View')}
+          >
+            📹 Top View
+          </button>
         </div>
       </div>
 
